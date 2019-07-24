@@ -1,0 +1,5 @@
+Bundle-Name: cms-assistant-service
+Bundle-SymbolicName: com.creatosix.cms.assistant.impl
+Bundle-Version: 1.0.0
+Bundle-Activator: com.creatosix.cms.activator.CmsAssistantActivator
+Export-Package: com.creatosix.cms.assistant
