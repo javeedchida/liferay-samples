@@ -6,6 +6,12 @@ import com.liferay.portal.kernel.exception.PortalException;
 
 import java.util.List;
 
+/**
+ * A suite of Liferay CMS utilities.
+ * 
+ * @author javeedchida
+ *
+ */
 public interface CmsAssistant {
 	
 	/**
@@ -19,7 +25,7 @@ public interface CmsAssistant {
 	public List<AssetEntry> getAssetEntriesByGroupIdAndStructureName(Long groupId, String structureName) throws PortalException ;
 	
 	/**
-	 * Retrieve a list of AssetCategory references for the specified groupId and vocabulary
+	 * Retrieve a list of AssetCategory references for the specified groupId and vocabulary name
 	 * @param groupId
 	 * @param vocabularyName
 	 * @return a List of AssetCategory references, null if there is no match

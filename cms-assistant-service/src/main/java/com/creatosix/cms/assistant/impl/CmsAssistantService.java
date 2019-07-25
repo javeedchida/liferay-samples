@@ -19,7 +19,7 @@ import java.util.Locale;
 import org.osgi.service.component.annotations.Component;
 
 /**
- * A service that holds utilities to asssit with CMS operations. Add methods here that augmnent the 
+ * Implementations of utilities to asssist with CMS operations. Add methods here that augmnent the 
  * CMS development experience. Methods defined here can be invoked from CMS templates.
  * 
  * @author javeedchida
