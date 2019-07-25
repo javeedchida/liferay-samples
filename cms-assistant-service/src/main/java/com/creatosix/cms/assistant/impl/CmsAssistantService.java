@@ -1,8 +1,11 @@
 package com.creatosix.cms.assistant.impl;
 
 import com.creatosix.cms.assistant.CmsAssistant;
+import com.liferay.asset.kernel.model.AssetCategory;
 import com.liferay.asset.kernel.model.AssetEntry;
+import com.liferay.asset.kernel.model.AssetVocabulary;
 import com.liferay.asset.kernel.service.AssetEntryServiceUtil;
+import com.liferay.asset.kernel.service.AssetVocabularyServiceUtil;
 import com.liferay.asset.kernel.service.persistence.AssetEntryQuery;
 import com.liferay.dynamic.data.mapping.model.DDMStructure;
 import com.liferay.dynamic.data.mapping.service.DDMStructureLocalServiceUtil;
@@ -55,6 +58,19 @@ public class CmsAssistantService implements CmsAssistant {
 			exc.printStackTrace();
 		} 
 		return assetEntries;
+	}
+
+	@Override
+	public List<AssetCategory> getAssetCategoriesByGroupIdAndVocabularyName(Long groupId, String vocabularyName)
+			throws PortalException {
+		List<AssetVocabulary> vocabularies = AssetVocabularyServiceUtil.getGroupVocabularies(groupId);
+		for (AssetVocabulary vocabulary : vocabularies) {
+			if (vocabulary.getName().equalsIgnoreCase(vocabularyName)) {
+				System.out.printf("-- found %d categories", vocabulary.getCategories().size());
+				return vocabulary.getCategories();
+			}
+		}
+		return null;
 	}
 
 }
